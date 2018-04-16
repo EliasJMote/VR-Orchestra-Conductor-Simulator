@@ -62,13 +62,13 @@ public class GameLogicScript : MonoBehaviour {
 			else if(currentSliderNum == 3)
 				PercussionSlider.value = 50;
 		}
-		if (Input.GetKeyDown(KeyCode.RightArrow)){
+		if (Input.GetKeyDown(KeyCode.DownArrow)){
 			if(currentSliderNum < 3)
 				currentSliderNum++;
 			else
 				currentSliderNum = 0;
 		}
-		if (Input.GetKeyDown(KeyCode.LeftArrow)){
+		if (Input.GetKeyDown(KeyCode.UpArrow)){
 			if(currentSliderNum > 0)
 				currentSliderNum--;
 			else
