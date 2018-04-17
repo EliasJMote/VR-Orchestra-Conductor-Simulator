@@ -8,6 +8,7 @@ public class Instantiate512cubes : MonoBehaviour {
     public float _maxScale;
     public audiopeer _audio;
     public int bands;
+    public float volscale;
 	// Use this for initialization
 	void Start () {
 		for (int i = 0; i < bands; i++)
@@ -28,11 +29,12 @@ public class Instantiate512cubes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		for (int i = 0; i < bands; i++)
         {
             if(_sampleCube != null)
             {
-                _sampleCube[i].transform.localScale = new Vector3(10, (_audio._samples[i] * _maxScale) + 2, 10);
+                _sampleCube[i].transform.localScale = new Vector3(10, (_audio._samples[i] * _maxScale) + 2, 10)*volscale;
             }
         }
 	}
