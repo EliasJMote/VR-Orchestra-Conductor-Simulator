@@ -13,8 +13,15 @@ public class metronome : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //transform.LookAt(target);
+        //120 beats X 1 minute     X t seconds X 2(to account for sin wave)
+        //    -----     ------
+        //    minute  2*30 seconds 
         float z = offset + Mathf.Sin((float)AudioSettings.dspTime * bpm / 30);
-        this.transform.localEulerAngles = new Vector3(0, 0, z * 15);
+        this.transform.localEulerAngles = new Vector3(
+            0,     // rotation (degrees) about x-axis
+            0,     // rotation (degrees) about y-axis
+            z * 15 // rotation (degrees) about z-axis
+            );
             
 	}
 }
