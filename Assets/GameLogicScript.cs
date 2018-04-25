@@ -20,7 +20,7 @@ public class GameLogicScript : MonoBehaviour
     public Text percussionText;
 
     // Indicates which slider we are on
-    private int currentSliderNum;
+    //private int currentSliderNum;
 
     // Game timer
     public int timer;
@@ -29,7 +29,7 @@ public class GameLogicScript : MonoBehaviour
     void Start()
     {
         timer = 0;
-        currentSliderNum = 0;
+        //currentSliderNum = 0;
 
         WoodwindSlider = WoodwindSlider.GetComponent<Slider>();
         StringSlider = StringSlider.GetComponent<Slider>();
@@ -46,33 +46,46 @@ public class GameLogicScript : MonoBehaviour
     void Update()
     {
         OVRInput.Update();
-        Debug.Log(OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch));
+        Vector3 RTouchVel = OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch);
+        Debug.Log(RTouchVel);
+        //Debug.Log(volviz.volscale);
         timer++;
 		if(timer % 10 == 0){
 			//if(timer > 30 * 3)
 				//WoodwindSlider.value--;
-			if(timer > 30 * 6)
-				StringSlider.value--;
+			//if(timer > 30 * 6)
+				//StringSlider.value--;
 			/*if(timer > 30 * 9)
 				HornSlider.value++;
 			if(timer > 30 * 12)
 				PercussionSlider.value++;*/
 		}
-        
+        if (timer % 60 * 10 == 0)
+        {
+           // volviz.volscale = 10f;
+        }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            volviz.volscale -= 1.35f;
+            volviz.volscale -= 1f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            volviz.volscale += 1.35f;
+            volviz.volscale += 1f;
         }
-        if (Input.GetKeyDown("z") || OVRInput.Get(OVRInput.Button.One))
+        if ((RTouchVel.y > 1 && volviz.volscale < 5f) || (RTouchVel.y < -1 && volviz.volscale > 5f))
         {
-            StringSlider.value = 100;
+            volviz.volscale = 5f;
         }
+            /*if (Input.GetKeyDown("z") || OVRInput.Get(OVRInput.Button.One))
+            {
+                StringSlider.value = 100;
+            }*/
 
+        if (OVRInput.Get(OVRInput.Button.One))
+        {
+            UnityEngine.XR.InputTracking.Recenter();
+        }
     }
 
     void FixedUpdate()
