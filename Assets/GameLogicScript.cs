@@ -45,7 +45,8 @@ public class GameLogicScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        OVRInput.Update();
+        Debug.Log(OVRInput.GetLocalControllerVelocity(OVRInput.Controller.RTouch));
         timer++;
 		if(timer % 10 == 0){
 			//if(timer > 30 * 3)
@@ -67,10 +68,16 @@ public class GameLogicScript : MonoBehaviour
         {
             volviz.volscale += 1.35f;
         }
-        if (Input.GetKeyDown("z"))
+        if (Input.GetKeyDown("z") || OVRInput.Get(OVRInput.Button.One))
         {
             StringSlider.value = 100;
         }
 
     }
+
+    void FixedUpdate()
+    {
+        OVRInput.FixedUpdate();
+    }
 }
+
