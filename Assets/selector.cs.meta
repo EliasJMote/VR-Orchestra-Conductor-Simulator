@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f954773fbe29fd3458da6a308bf7b6df
+timeCreated: 1524206639
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _prefabRedBlast: {fileID: 157102, guid: 4ce806bd6d1ee1e4d86921019641ae48, type: 2}
+  - piano: {instanceID: 0}
+  - drum: {instanceID: 0}
+  - harp: {instanceID: 0}
+  - violin: {instanceID: 0}
+  - trumpet: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
