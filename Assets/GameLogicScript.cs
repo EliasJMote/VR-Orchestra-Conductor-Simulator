@@ -32,6 +32,19 @@ public class GameLogicScript : MonoBehaviour
             else
                 _gameScore--;
         }
+        
+        timer++;
+		if(timer % 10 == 0){
+			//if(timer > 30 * 3)
+				//WoodwindSlider.value--;
+			if(timer > 30 * 6)
+				StringSlider.value--;
+			/*if(timer > 30 * 9)
+				HornSlider.value++;
+			if(timer > 30 * 12)
+				PercussionSlider.value++;*/
+		}
+        
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
@@ -40,6 +53,10 @@ public class GameLogicScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             volviz.volscale += 1.35f;
+        }
+        if (Input.GetKeyDown("z"))
+        {
+            StringSlider.value = 100;
         }
 
     }
