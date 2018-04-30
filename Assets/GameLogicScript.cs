@@ -12,11 +12,16 @@ public class GameLogicScript : MonoBehaviour
     float _bpmScale; // bpm * 1min/60s
     public float conductorTolerance = 1.0f/4.0f; // fraction of a beat
     public double _inputDelay = 25.0/1000.0; // in seconds
+    public Text scoreObject;
+    public GameObject beatObject;
+    public GameObject selector;
+    private selector _selectorScript;
 
     // Use this for initialization
     void Start()
     {
         SetBPM(initialBPM);
+        _selectorScript = selector.GetComponent<selector>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,11 @@ public class GameLogicScript : MonoBehaviour
     {
      
         double keyTime = AudioSettings.dspTime - _inputDelay;
+
+        // Display/hide ui element
+        beatObject.SetActive(KeyTimeGoodEnough(keyTime));
+
+
 
         if ( Input.GetKeyDown(KeyCode.Space) )
         {
@@ -41,7 +51,8 @@ public class GameLogicScript : MonoBehaviour
         {
             volviz.volscale += 1.35f;
         }
-
+        scoreObject.text = "Score: " + _gameScore;
+        Debug.Log(_selectorScript.instSelection);
     }
 
     private bool KeyTimeGoodEnough( double t )
