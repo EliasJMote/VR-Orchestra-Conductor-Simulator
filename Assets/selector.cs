@@ -8,11 +8,6 @@ public class selector : MonoBehaviour {
     //public Vector2 stickInput;
     // Use this for initialization
     void Start () {
-
-
-        
-      
-
     }
 
     // Update is called once per frame

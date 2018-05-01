@@ -16,6 +16,7 @@ public class GameLogicScript : MonoBehaviour
     public GameObject beatObject;
     public GameObject selector;
     private selector _selectorScript;
+    public AudioSource pianoMusic;
 
     // Use this for initialization
     void Start()
@@ -31,9 +32,7 @@ public class GameLogicScript : MonoBehaviour
         double keyTime = AudioSettings.dspTime - _inputDelay;
 
         // Display/hide ui element
-        beatObject.SetActive(KeyTimeGoodEnough(keyTime));
-
-
+        //beatObject.SetActive(KeyTimeGoodEnough(keyTime));
 
         if ( Input.GetKeyDown(KeyCode.Space) )
         {
@@ -46,13 +45,17 @@ public class GameLogicScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             volviz.volscale -= 1.35f;
+            pianoMusic.volume -= 0.1f;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             volviz.volscale += 1.35f;
+            pianoMusic.volume += 0.1f;
         }
         scoreObject.text = "Score: " + _gameScore;
-        Debug.Log(_selectorScript.instSelection);
+        //Debug.Log(_selectorScript.instSelection);
+        Debug.Log(pianoMusic.volume);
+
     }
 
     private bool KeyTimeGoodEnough( double t )
