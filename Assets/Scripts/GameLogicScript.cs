@@ -19,7 +19,7 @@ public class GameLogicScript : MonoBehaviour
     private selector _selectorScript;
     public Text scoreText;
     public Text accuracyText;
-    private float timer = 2;
+    private float timer = 2; // change to length of song in seconds
     private float errorTime;
       
 
@@ -99,7 +99,7 @@ public class GameLogicScript : MonoBehaviour
     {
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(true);
-        double accuracy = Math.Round( 100 - ((errorTime / 368.0) * 100.0), 2); 
+        double accuracy = Math.Round( 100 - ((errorTime / 368.0) * 100.0), 2); // change 368 to length of song
         scoreText.text = "Final Score: " + _gameScore;
         accuracyText.text = "Accuracy: " + accuracy + "%";
     }
