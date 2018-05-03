@@ -1,7 +1,5 @@
 fileFormatVersion: 2
 guid: 91bc2fb82fc6a3247aca09d8cd4bc272
-timeCreated: 1523818658
-licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
@@ -43,6 +41,7 @@ ModelImporter:
     4300006: Piano
     4300008: Trumpet
     4300010: Violin
+    2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -62,6 +61,7 @@ ModelImporter:
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

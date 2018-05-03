@@ -104,41 +104,148 @@ public class GameLogicScript : MonoBehaviour
          * Timer events for requiring music to be adjusted
          */
 
-        // 10 second mark
-        if (timer >= 10f && timer <= 10.2f)
+        // 15 second mark
+        if (timer >= 15f && timer <= 15f + 0.2f)
         {
             pianoMusic.volume = 0.8f;
             pianoVisualizer.volscale = 8f;
             pianoVisualizerObj.SetActive(true);
         }
 
-        // 20 second mark
-        if (timer >= 20f && timer <= 20.2f)
+        // 30 second mark
+        if (timer >= 30f && timer <= 30f + 0.2f)
         {
-            pianoMusic.volume = 0.2f;
-            pianoVisualizer.volscale = 2f;
-            pianoVisualizerObj.SetActive(true);
+            trumpetMusic.volume = 0.8f;
+            trumpetVisualizer.volscale = 8f;
+            trumpetVisualizerObj.SetActive(true);
         }
 
-        // 30 second mark
-
-        // 40 second mark
-
-        // 50 second mark
+        // 45 second mark
+        if (timer >= 45f && timer <= 45f + 0.2f)
+        {
+            violinMusic.volume = 0.8f;
+            violinVisualizer.volscale = 8f;
+            violinVisualizerObj.SetActive(true);
+        }
 
         // 1 minute mark
+        if (timer >= 15f * 4 && timer <= 15f * 4 + 0.2f)
+        {
+            drumMusic.volume = 0.8f;
+            drumVisualizer.volscale = 8f;
+            drumVisualizerObj.SetActive(true);
+        }
 
-        // 1 minute 10 second mark
+        // 1 minute 15 second mark
+        if (timer >= 15f * 5 && timer <= 15f * 5 + 0.2f)
+        {
+            harpMusic.volume = 0.3f;
+            harpVisualizer.volscale = 3f;
+            harpVisualizerObj.SetActive(true);
+        }
 
-        // 1 minute 20 second mark
+        // 1 minute 30 second mark
+        if (timer >= 15f * 6 && timer <= 15f * 6 + 0.2f)
+        {
+            trumpetMusic.volume = 1.0f;
+            trumpetVisualizer.volscale = 10f;
+            trumpetVisualizerObj.SetActive(true);
+        }
 
+        // 1 minute 45 second mark
+        if (timer >= 15f * 7 && timer <= 15f * 7 + 0.2f)
+        {
+            violinMusic.volume = 0.6f;
+            violinVisualizer.volscale = 6f;
+            violinVisualizerObj.SetActive(true);
+        }
+
+        // 2 minute 0 second mark
+        if (timer >= 15f * 8 && timer <= 15f * 8 + 0.2f)
+        {
+            trumpetMusic.volume = 0.3f;
+            trumpetVisualizer.volscale = 3f;
+            trumpetVisualizerObj.SetActive(true);
+        }
+
+        // 2 minute 15 second mark
+        if (timer >= 15f * 9 && timer <= 15f * 9 + 0.2f)
+        {
+            harpMusic.volume = 0.8f;
+            harpVisualizer.volscale = 8f;
+            harpVisualizerObj.SetActive(true);
+        }
+
+        // 2 minute 30 second mark
+        if (timer >= 15f * 10 && timer <= 15f * 10 + 0.2f)
+        {
+            drumMusic.volume = 0.1f;
+            drumVisualizer.volscale = 1f;
+            drumVisualizerObj.SetActive(true);
+        }
+
+        // 2 minute 45 second mark
+        if (timer >= 15f * 11 && timer <= 15f * 11 + 0.2f)
+        {
+            violinMusic.volume = 0.7f;
+            violinVisualizer.volscale = 7f;
+            violinVisualizerObj.SetActive(true);
+        }
+
+        // 3 minute 0 second mark
+        if (timer >= 15f * 12 && timer <= 15f * 12 + 0.2f)
+        {
+            trumpetMusic.volume = 0.3f;
+            trumpetVisualizer.volscale = 3f;
+            trumpetVisualizerObj.SetActive(true);
+        }
+
+        // 3 minute 15 second mark
+        if (timer >= 15f * 13 && timer <= 15f * 13 + 0.2f)
+        {
+            harpMusic.volume = 0.9f;
+            harpVisualizer.volscale = 9f;
+            harpVisualizerObj.SetActive(true);
+        }
+
+        // 3 minute 30 second mark
+        if (timer >= 15f * 14 && timer <= 15f * 14 + 0.2f)
+        {
+            drumMusic.volume = 0.8f;
+            drumVisualizer.volscale = 8f;
+            drumVisualizerObj.SetActive(true);
+        }
+
+        // 3 minute 45 second mark
+        if (timer >= 15f * 15 && timer <= 15f * 15 + 0.2f)
+        {
+            trumpetMusic.volume = 0.2f;
+            trumpetVisualizer.volscale = 2f;
+            trumpetVisualizerObj.SetActive(true);
+        }
+
+        // 4 minute 0 second mark
+        if (timer >= 15f * 16 && timer <= 15f * 16 + 0.2f)
+        {
+            violinMusic.volume = 0.8f;
+            violinVisualizer.volscale = 8f;
+            violinVisualizerObj.SetActive(true);
+        }
+
+        // 4 minute 15 second mark
+        if (timer >= 15f * 17 && timer <= 15f * 17 + 0.2f)
+        {
+            drumMusic.volume = 0.8f;
+            drumVisualizer.volscale = 8f;
+            drumVisualizerObj.SetActive(true);
+        }
 
         // Decrease volume with downward swipe
-        if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.RTouch).y > 2)
+        if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.RTouch).y > 4)
         {
             switch(_selectorScript.instSelection)
             {
-                case 0:
+                case 3:
                     if(trumpetMusic.volume > 0.5f)
                     {
                         trumpetMusic.volume = 0.5f;
@@ -147,7 +254,7 @@ public class GameLogicScript : MonoBehaviour
                         _gameScore += 100;
                     }
                     break;
-                case 1:
+                case 0:
                     if (drumMusic.volume > 0.5f)
                     {
                         drumMusic.volume = 0.5f;
@@ -165,7 +272,7 @@ public class GameLogicScript : MonoBehaviour
                         _gameScore += 100;
                     }
                     break;
-                case 3:
+                case 1:
                     if (harpMusic.volume > 0.5f)
                     {
                         harpMusic.volume = 0.5f;
@@ -187,11 +294,11 @@ public class GameLogicScript : MonoBehaviour
         }
 
         // Increase volume with upward swipe
-        if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.RTouch).y < -2)
+        if (OVRInput.Get(OVRInput.Button.One, OVRInput.Controller.RTouch) && OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.RTouch).y < -4)
         {
             switch (_selectorScript.instSelection)
             {
-                case 0:
+                case 3:
                     if (trumpetMusic.volume < 0.5f)
                     {
                         trumpetMusic.volume = 0.5f;
@@ -200,7 +307,7 @@ public class GameLogicScript : MonoBehaviour
                         _gameScore += 100;
                     }
                     break;
-                case 1:
+                case 0:
                     if (drumMusic.volume < 0.5f)
                     {
                         drumMusic.volume = 0.5f;
@@ -218,8 +325,8 @@ public class GameLogicScript : MonoBehaviour
                         _gameScore += 100;
                     }
                     break;
-                case 3:
-                    if (pianoMusic.volume < 0.5f)
+                case 1:
+                    if (harpMusic.volume < 0.5f)
                     {
                         harpMusic.volume = 0.5f;
                         harpVisualizer.volscale = 5f;
